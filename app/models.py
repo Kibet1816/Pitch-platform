@@ -13,7 +13,27 @@ class User(db.Model):
     id = db.Column(db.Integer,primary_key = True)
     username = db.Column(db.String(255))
     role_id = db.Column(db.Integer,db.ForeignKey('roles.id'))
-    password = db.Column(db.String(255))
+    pass_secure = db.Column(db.String(255))
+
+    @property
+    def password(self):
+        """
+        Method to create a write only class property
+        """
+        raise AttributeError('You cannot read the password attribute')
+
+    @password.setter
+    def password(self,password):
+        """
+        Method to set the password
+        """
+        self.pass_secure = generate_password_hash(password)
+
+    def verify_password(self,password):
+        """
+        Method that takes in a password,hashes it and compares it to the hashed password for verification
+        """
+        return check_password_hash(self.pass_secure,password)
 
 class Role(db.Model):
     """
