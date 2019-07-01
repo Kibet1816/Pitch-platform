@@ -7,9 +7,10 @@ class PitchForm(FlaskForm):
     Class for users to write their own pitches
     """
 
-    title = StringField('Review title',validators=[Required()])
-    review = TextAreaField('Write a new pitch')
+    title = StringField('Pitch title',validators=[Required()])
+    pitch = TextAreaField('Write a new pitch')
     submit = SubmitField('Submit')
+
 class UpdateProfile(FlaskForm):
     """
     Class to update our profile

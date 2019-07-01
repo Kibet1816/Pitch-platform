@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="card">
+            <div class="card-title">
+                {{pitches.title}}
+            </div>
+            <div class="card-body">
+                {{pitches.pitch}}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

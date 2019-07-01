@@ -87,7 +87,7 @@ class Pitch(db.Model):
     """
     __tablename__ = 'pitch'
 
-    id = dbColumn(db.Integer,primary_key = True)
+    id = db.Column(db.Integer,primary_key = True)
     pitch_id = db.Column(db.Integer)
     pitch_title = db.Column(db.String)
     pitch_subject = db.Column(db.String)
