@@ -12,7 +12,7 @@ def index():
 
 @main.route('/pitches/review/new/<int:id>',methods = ['GET','POST'])
 @login_required
-def new_review():
+def new_pitch():
     pass
 
 @main.route('/user/<uname>')
