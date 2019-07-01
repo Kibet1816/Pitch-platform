@@ -12,7 +12,7 @@ def mail_message(subject,template,to,**kwargs):
         To:Recipient of the email
         **Kwargs:Any keyword arguments
     """
-    sender_email = kibet1816@gmail.com
+    sender_email = 'kibet1816@gmail.com'
 
     email = Message(subject, sender=sender_email, recipients=[to])
     email.body= render_template(template + ".txt",**kwargs)

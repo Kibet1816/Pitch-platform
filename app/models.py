@@ -2,6 +2,7 @@ from . import db
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
 from . import login_manager
+from datetime import datetime
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -29,6 +30,7 @@ class User(UserMixin,db.Model):
     profile_pic_path = db.Column(db.String())
     role_id = db.Column(db.Integer,db.ForeignKey('roles.id'))
     pass_secure = db.Column(db.String(255))
+    pitches = db.relationship('Pitch',backref = 'user',lazy = "dynamic")
 
     @property
     def password(self):
@@ -50,6 +52,13 @@ class User(UserMixin,db.Model):
         """
         return check_password_hash(self.pass_secure,password)
 
+
+    def __repr__(self):
+        """
+        Function that makes debugging easier
+        """
+        return f'User {self.username}'
+
 class Role(db.Model):
     """
     Class that will define all different roles
@@ -69,9 +78,37 @@ class Role(db.Model):
         """
         return f'User {self.name}'
 
+class Pitch(db.Model):
+    """
+    Class that handles pitch post requests
 
-    def __repr__(self):
+    Args:
+        DbModel:Connects our class to our database and allow communication
+    """
+    __tablename__ = 'pitch'
+
+    id = dbColumn(db.Integer,primary_key = True)
+    pitch_id = db.Column(db.Integer)
+    pitch_title = db.Column(db.String)
+    pitch_subject = db.Column(db.String)
+    posted = db.Column(db.DateTime,default = datetime.utcnow)
+    user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
+
+    def save_pitch(self):
         """
-        Function that makes debugging easier
+        Method to save the pitch
         """
-        return f'User {self.username}'
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def get_pitches(cls,id):
+        """
+        Method to get the pitches
+        """
+        pitches = Pitch.query.filter_by(pitch_id=id).all()
+
+        return pitches
+
+
+    
