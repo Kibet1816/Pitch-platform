@@ -1,4 +1,5 @@
 {% extends 'base.html'%}
+
 <!-- Styles block -->
 {% block styles%}
 {{ super() }}
@@ -15,107 +16,54 @@
   
   <div class="container-fluid"> 
     <div class="col-md-6">
-      <!-- Card content -->
       <div class="card-body">
-        <!-- Title -->
         <h4 class="card-title"><a>Business Pitch</a></h4>
-        <!-- Text -->
         <p class="card-text">Employ people who are going to put in just enough work to complete a task.They normally do the best work</p>
-        <!-- Button -->
         <hr>      
       </div>  
     </div>
     <br>
     <div class="col-md-6">
-      <!-- Card content -->
       <div class="card-body">
-        <!-- Title -->
         <h4 class="card-title"><a>Idea Pitch</a></h4>
-        <!-- Text -->
         <p class="card-text">No Idea Is So Outlandish That It Should Not Be Considered With A Searching But At The Same Time A Steady Eye.</p>
-        <!-- Button -->
         <hr>  
         
       </div>  
     </div>
     <br>
     <div class="col-md-6">
-      <!-- Card content -->
       <div class="card-body">
-        <!-- Title -->
         <h4 class="card-title"><a>Motivational Pitch</a></h4>
-        <!-- Text -->
         <p class="card-text">The harder you work for something, the greater you’ll feel when you achieve it.</p>  
+       <hr>
       </div>  
     </div>
     <hr>
     <div class="col-md-6">
-      <!-- Card content -->
       <div class="card-body">
-        <!-- Title -->
         <h4 class="card-title"><a>Funny Pitch</a></h4>
-        <!-- Text -->
         <p class="card-text">When Koffee said "Kaa mbali na life man" , I really felt that</p>
-        <!-- Button -->
+       <hr>
       </div>  
     </div>
-    <hr>
     <div class="col-md-6">
-      <!-- Card content -->
       <div class="card-body">
-        <!-- Title -->
         <h4 class="card-title"><a>Prayer Pitch</a></h4>
-        <!-- Text -->
         <p class="card-text">Our prayers are sometimes answered without us realizing.</p>
-        <!-- Button -->
         <hr>
       </div>  
     </div>
     <br>
     <div class="col-md-6">
-      <!-- Card content -->
       <div class="card-body">
-        <!-- Title -->
         <h4 class="card-title"><a>Love Pitch</a></h4>
-        <!-- Text -->
         <p class="card-text">You know you're in love when you can't fall asleep because reality is finally better than your dreams.</p>
-        <!-- Button -->
         <hr>  
       </div>  
     </div>
     <br>
   </div>
-  <div class="modal fade" id="modalSubscriptionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold"></h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <i class="fas fa-user prefix grey-text"></i>
-          <input type="text" id="form3" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="form3">Your name</label>
-        </div>
-        <div class="md-form mb-4">
-          <i class="fas fa-envelope prefix grey-text"></i>
-          <input type="email" id="form2" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="form2">Your email</label>
-        </div>
-      </div>
-      <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-indigo">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="text-center">
-</div>
-
 </body>
 </html>
 {% endblock%}
