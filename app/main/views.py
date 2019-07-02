@@ -91,7 +91,8 @@ def new_pitch():
     if new.validate_on_submit():
 
         brand = Pitch(pitch_title = new.title.data,pitch_subject = new.pitch.data)
-
+        view = []
+        view.append(brand)
         db.session.add(brand)
         db.session.commit()
 
