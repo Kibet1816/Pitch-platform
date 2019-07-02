@@ -1,0 +1,12 @@
+{% macro displayPitches(view) %}
+  {% for pitch in view %}
+    <div class="card">
+        <div class="card-title">
+          {{view.title}}
+        </div>
+        <div class="card-body">
+          {{view.pitch}}
+        </div>
+    </div>
+  {% endfor %}
+{% endmacro %}
