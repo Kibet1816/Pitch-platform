@@ -1,7 +1,6 @@
 import os
 
 class Config():
-    SECRET_KEY = 'blaugrana'
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://denis1816:kibet@localhost/forza'
     SECRET_KEY = os.environ.get('SECRET_KEY')
     UPLOADED_PHOTOS_DEST ='app/static/photos'
@@ -11,8 +10,7 @@ class Config():
     SIMPLEMDE_USE_CDN = True
     
 class ProdConfig(Config):
-    # SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-    pass
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
     
 class DevConfig(Config):
     pass
