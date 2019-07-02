@@ -18,6 +18,12 @@ Click [here](https://dudley-eds-78334.herokuapp.com) to see the live site
     - Run `chmod a+x start.sh`
     - Run `./start.sh`
 
+## Instructions for use
+
+- In the home page,click `sign in` in the navbar
+- Click on the `sign up here` link to create a new pitch board account
+- On the navbar , click on a topic of choice to create a new pitch or idea
+
 ## Known bugs
 No known errors if found drop a message on my profile
 
